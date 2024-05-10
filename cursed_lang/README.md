@@ -20,9 +20,14 @@ For a full list of words, refer to the source itself.
 
 ## Examples
 
+Hello world
+```
+(Hello world!) print
+```
+
 Factorial
 ```
-(dup 1 > (dup 1 - factorial *) if) 'factorial !
+(dup 1 > (dup 1 - factorial *) if) factorial !
 10 factorial print
 ```
 
@@ -30,12 +35,12 @@ Fizzbuzz
 ```
 0 a ! 0 b ! 0 c !
 
-((()) 'd !) 'resetd !
-(a 3 = (d fizz + 'd ! 0 'a !) if) 'addfizz !
-(b 5 = (d buzz + 'd ! 0 'b !) if) 'addbuzz !
-(d () = (d c + 'd !) if) 'fallback !
+((()) 'd !) resetd !
+(a 3 = (d fizz + 'd ! 0 'a !) if) addfizz !
+(b 5 = (d buzz + 'd ! 0 'b !) if) addbuzz !
+(d () = (d c + 'd !) if) fallback !
 
-(resetd addfizz addbuzz fallback d print) 'printone !
+(resetd addfizz addbuzz fallback d print) printone !
 
 (c 100 <) (a 1 + 'a ! b 1 + 'b ! c 1 + 'c ! printone) loop
 ```

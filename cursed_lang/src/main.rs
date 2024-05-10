@@ -29,26 +29,26 @@ fn parse_token(s: &mut &str) -> String {
 fn get_code() -> String {
     let fizzbuzz = r#"
     0 a ! 0 b ! 0 c !
-    
-    ((()) 'd !) 'resetd !
-    (a 3 = (d fizz + 'd ! 0 'a !) if) 'addfizz !
-    (b 5 = (d buzz + 'd ! 0 'b !) if) 'addbuzz !
-    (d () = (d c + 'd !) if) 'fallback !
 
-    (resetd addfizz addbuzz fallback d print) 'printone !
+    ((()) 'd !) resetd !
+    (a 3 = (d fizz + 'd ! 0 'a !) if) addfizz !
+    (b 5 = (d buzz + 'd ! 0 'b !) if) addbuzz !
+    (d () = (d c + 'd !) if) fallback !
+
+    (resetd addfizz addbuzz fallback d print) printone !
 
     (c 100 <) (a 1 + 'a ! b 1 + 'b ! c 1 + 'c ! printone) loop
 "#;
 
     let factorial = r#"
 
-    (dup 1 > (dup 1 - factorial *) if) 'factorial !
+    (dup 1 > (dup 1 - factorial *) if) factorial !
     5 factorial print
     "#;
 
 
     let avoiding_injection = r#"
-    'hunter2 secretpassword !
+    hunter2 secretpassword !
     (How old are you?) print
     read 'age !
     (This variant would be vulnerable as it would evaluate age
