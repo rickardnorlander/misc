@@ -144,7 +144,7 @@ fn eval(co: &mut Context, in_s: &str) {
             "@" => {let v = co.variables.get(&co.stack.pop().unwrap()).unwrap(); co.stack.push(v.clone());}
             "drop" => {co.stack.pop().unwrap();}
             "[]" => {
-                // This O(n^2) because I'm too lazy to figure out how to do it properly.
+                // This is O(n) because I'm too lazy to figure out how to do it properly.
                 let b = co.stack.pop().unwrap().parse::<usize>().unwrap(); let a = co.stack.pop().unwrap(); co.stack.push((a.chars().nth(b).unwrap() as u32).to_string())
             }
             "char" => {let c = char::from_u32(co.stack.pop().unwrap().parse::<u32>().unwrap()).unwrap(); co.stack.push(c.to_string());}
